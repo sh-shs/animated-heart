@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>For Someone Special ❤️</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Background Ambient Particle Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Global Background Vignette & Glow Overlay -->
+    <div class="cinematic-vignette"></div>
+    <div class="ambient-glow" id="ambient-glow"></div>
+
+    <!-- Audio Control Button -->
+    <button id="audio-toggle" class="audio-btn hidden" aria-label="Toggle Audio">
+        <span class="audio-icon">🔊</span>
+        <span class="audio-pulse"></span>
+    </button>
+
+    <!-- Audio Element -->
+    <audio id="bg-music" loop preload="auto">
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- App Container -->
+    <main id="app-container">
+
+        <!-- 1. Opening / Welcome Screen -->
+        <section id="screen-welcome" class="screen active">
+            <div class="glass-card welcome-card">
+                <div class="card-sparkle"></div>
+                <p class="subtitle" id="welcome-subtitle">Something special is waiting for you...</p>
+                <button id="btn-open" class="btn btn-primary glow-btn">
+                    <span class="btn-text" id="welcome-btn-text">Open</span>
+                    <span class="btn-glow"></span>
+                    <span class="ripple-container"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. Loading Screen -->
+        <section id="screen-loading" class="screen hidden">
+            <div class="loading-content">
+                <p class="loading-subtitle" id="loading-title">Preparing something special...</p>
+                <div class="percentage-container">
+                    <span id="loading-percentage">0</span><span class="percent-symbol">%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div id="loading-bar-fill" class="progress-bar-fill"></div>
+                    <div class="progress-bar-glow"></div>
+                </div>
+                <p id="loading-status" class="loading-status"></p>
+            </div>
+        </section>
+
+        <!-- 3. Start Screen -->
+        <section id="screen-start" class="screen hidden">
+            <div class="start-content glass-card">
+                <h1 class="start-title" id="start-title">Are you ready?</h1>
+                <button id="btn-start" class="btn btn-start glow-btn">
+                    <span class="btn-text" id="start-btn-text">START</span>
+                    <span class="btn-glow"></span>
+                    <span class="btn-particles"></span>
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. Main Heart Screen -->
+        <section id="screen-main" class="screen hidden">
+            <!-- Heart Canvas Overlay -->
+            <canvas id="heart-canvas"></canvas>
+
+            <!-- Text Reveal Overlay -->
+            <div id="text-reveal-container" class="text-reveal-container hidden">
+                <h1 class="final-title" id="final-title">For Someone Special ❤️</h1>
+                <p class="final-message" id="final-message">Some things are better felt than explained.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/loading.js"></script>
+    <script src="js/heart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
